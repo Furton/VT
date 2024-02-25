@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .pan {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+
+        .hid {
+            display: none;
+        }
+
+        .int {
+            pointer-events: auto !important;
+        }
+
+        .uns {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .startBtn {
+            position: absolute;
+            width: 88vw;
+            height: 49vw;
+            max-width: 39.1vh;
+            max-height: 22vh;
+            left: max(6vw,calc(50vw - 19.6vh));
+            overflow: hidden;
+            pointer-events: none;
+            animation: pulse 1.2s ease-in infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(0.9);
+            }
+        }
+
+        .startBtnTxt {
+            font-family: "Roboto";
+            font-weight: 700;
+            font-size: min(5.5vh,5.5vw);
+            margin-top: min(8vh,8vw);
+            margin-left: min(5vh,5vw);
+            pointer-events: none !important;
+            color: white;
+        }
+
+        .posS {
+            top: 60%;
+        }
+
+        .topImg {
+            position: absolute;
+            top: 6%;
+            width: 88vw;
+            height: 50vw;
+            max-width: 80vh;
+            max-height: 50vh;
+            left: max(6vw,calc(50vw - 40vh));
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .topImgText {
+            font-family: "Roboto";
+            font-weight: 700;
+            font-size: min(5.5vh,5.5vw);
+            margin-top: min(20vh,20vw);
+            margin-left: min(12vh,12vw);
+            pointer-events: none !important;
+            color: white;
+        }
+
+        .pos0{
+            top: 20%;
+        }
+
+        .pos1 {
+            top: 55%;
+        }
+
+        .ansBtn {
+            position: absolute;
+            width: 90vw;
+            height: 20vw;
+            left: max(5vw,calc(50vw - 45vh));
+            max-width: 90vh;
+            max-height: 20vh;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .anT {
+            font-family: "Roboto";
+            font-weight: 700;
+            position: absolute;
+            color: white;
+            text-align: center;
+            pointer-events: none;
+        }
+        .sizeS {
+            font-size: min(6vh,6vw);
+            margin-top: min(7vh,7vw);
+        }
+
+        .winImg {
+            position: absolute;
+            top: 27%;
+            width: 88vw;
+            height: 50vw;
+            max-width: 80vh;
+            max-height: 50vh;
+            left: max(6vw,calc(50vw - 40vh));
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .winImgText {
+            font-family: "Roboto";
+            font-weight: 700;
+            font-size: min(4.5vh,4.5vw);
+            margin-top: min(12vh,12vw);
+            margin-left: min(17vh,17vw);
+            pointer-events: none !important;
+            color: white;
+            white-space: pre-wrap;
+        }
+
+
+        .downText {
+            font-family: "Roboto";
+            font-weight: 700;
+            font-size: min(6.5vh,6.5vw);
+            text-align: center;
+            margin-top: 87vh;
+            pointer-events: none !important;
+            color: white;
+        }
+
+}
+    </style>
+</head>
+<body>
+    <img class="pan" src="sprites/back.png" />
+
+
+    <div id="startPan" class="pan uns">
+        <img class="topImg" src="sprites/fr.png" />
+        <div class="topImg">
+            <div class="topImgText">Конкурс всех Веронок!</div>
+        </div>
+
+
+        <img class="startBtn posS" src="sprites/btn.png" />
+        <div id="startBtn" class="startBtn posS int">
+            <div class="startBtnTxt">Хамхамхам!</div>
+        </div>
+    </div>
+
+
+
+    <div id="gamePan" class="pan hid uns">
+
+        <div id="answerPan" class="pan">
+            <img class="ansBtn pos0" src="sprites/btn.png" />
+            <div id="ans1" class="ansBtn pos0 int"></div>
+            <div id="ansT1" class="ansBtn pos0 anT sizeS">dbfbbbbbbbvc</div>
+
+
+            <img class="ansBtn pos1" src="sprites/btn.png" />
+            <div id="ans2" class="ansBtn pos1 int"></div>
+            <div id="ansT2" class="ansBtn pos1 anT sizeS">gfbbbbdv</div>
+        </div>
+
+        <div id="winPan" class="pan hid">
+            <img class="winImg" src="sprites/fr.png" />
+            <div id ="winBtn" class="winImg int">
+                <div id ="winText" class="winImgText">nfc</div>
+            </div>
+        </div>
+
+        <div id="downText" class="downText">800/800</div>
+
+    </div>
+
+        <script src="main.js"></script>
+</body>
+</html>
